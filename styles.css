@@ -8,7 +8,7 @@ body {
 }
 
 header, footer {
-    background-color: #263238;
+    background-color: red;
     color: #fff;
     padding: 30px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
