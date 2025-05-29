@@ -1,46 +1,204 @@
+/* Базовий стиль */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #e0f7fa, #e1f5fe);
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-header, footer {
-    background-color: #263238;
-    color: #fff;
-    padding: 30px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+/* Темна тема */
+.dark-mode {
+  background-color: #121212;
+  color: white;
 }
 
-main {
-    padding: 50px 20px;
+/* Хедер */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-spacing: 2px
 }
 
-h1, h2 {
-    margin-bottom: 20px;
+.header-button {
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
 }
 
+.header-button.right {
+  justify-content: flex-end;
+}
+
+.header-title {
+  width: 60%;
+  text-align: center;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* Кнопки */
 button {
-    padding: 12px 28px;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-    background: #2196f3;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background: #1976d2;
-    transform: scale(1.05);
+  background-color: #0056b3;
 }
 
-#colorText {
+/* Модальне вікно */
+#feedbackModal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  z-index: 9999;
+  width: 320px;
+}
+
+.dark-mode #feedbackModal {
+  background: #222;
+  color: white;
+}
+
+#feedbackModal input,
+#feedbackModal textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+#feedbackModal button[type="submit"] {
+  background-color: #28a745;
+  width: 100%;
+  padding: 8px 0;
+}
+
+#feedbackModal button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Контактна та головна таблиці */
+.contact-info {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+}
+
+.contact-info td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* Головна таблиця */
+.main-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.left-column {
+  width: 50%;
+  padding: 10px 20px;
+  border-right: 1px solid #ccc;
+  vertical-align: top;
+  text-align: left;
+}
+
+.right-column {
+  width: 50%;
+  padding: 10px 20px;
+  vertical-align: top;
+  text-align: left;
+}
+
+/* Секції */
+.section {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.section h2 {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+h3 {
     margin-top: 20px;
-    font-size: 18px;
-    font-weight: 500;
+    border-bottom: 2px solid #999;
+    padding-bottom: 5px;
+}
+
+.dark-mode .section h2 {
+  background-color: #333;
+}
+
+/* Упорядковані списки */
+ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Коментарі */
+#comments {
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+}
+
+#comments div {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dark-mode #comments {
+  background-color: #222;
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  border-top: 1px solid #ccc;
 }

@@ -1,27 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Static Site</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>CV</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>Deployed with Vercel</p>
-    </header>
+<div class="header">
+  <div class="header-button left">
+    <button onclick="toggleTheme()">Switch theme</button>
+  </div>
 
-    <main>
-        <h2>Click the button to change the color:</h2>
-        <button id="colorButton">Change Color</button>
-        <p id="colorText">This text will change color.</p>
-    </main>
+  <div class="header-title">
+    <h1>Menok Serhii Ihorovych</h1>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Serhii</p>
-    </footer>
+  <div class="header-button right">
+    <button onclick="openFeedback()">Write feedback</button>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<table class="contact-info">
+  <tr>
+    <td>Email: serhii.menok.kb.2022@lpnu.ua</td>
+    <td>Phone: +380123456789</td>
+    <td>City: Lviv, Ukraine</td>
+  </tr>
+</table>
+
+<div class="section">
+  <h2>Objective</h2>
+  <p>To obtain a position as a <em>Junior Frontend Developer</em> in a stable and innovative company with opportunities for professional growth.</p>
+</div>
+
+<table class="main-table">
+  <tr>
+    <td class="left-column">
+      <h3>Education</h3>
+<ul>
+      <p><strong>Lviv Polytechnic National University</strong><br>
+        ICTA<br>
+        Specialty: 125 Cybersecurity<br>
+        Years: 2022 &mdash; 2026</p>
+</ul>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>HTML, CSS, JavaScript (basic level)</li>
+        <li>Git, GitHub</li>
+        <li>MySQL</li>
+        <li>Cybersecurity basics</li>
+      </ul>
+
+      <h3>Languages</h3>
+      <ul>
+        <li>Ukrainian &mdash; native</li>
+        <li>English &mdash; B1</li>
+      </ul>
+
+      <h3>Awards</h3>
+      <p>Internship at SoftServe with positive feedback.</p>
+    </td>
+    <td class="right-column">
+      <h3>Work Experience</h3>
+      <p><strong>Intern</strong> &mdash; SoftServe<br><em>July 2024 &mdash; August 2024</em></p>
+      <ul>
+        <li>Frontend tasks</li>
+        <li>Team meetings, code reviews</li>
+        <li>Version control with Git</li>
+      </ul>
+
+      <h3>About Me</h3>
+      <p>I&#x02BC;m a responsible student passionate about web development and cybersecurity.</p>
+
+      <h3>Hobbies</h3>
+      <ul>
+        <li>Web development</li>
+        <li>Cybersecurity research</li>
+        <li>Reading tech blogs</li>
+        <li>Table tennis</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<div class="section">
+  <h2>Comments</h2>
+  <div id="comments"></div>
+</div>
+
+<!-- Feedback Modal -->
+<div id="feedbackModal">
+  <button onclick="closeFeedback()" class="close-btn">X</button>
+  <h3>Feedback Form</h3>
+  <form action="https://formspree.io/f/manoeyla" method="POST">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="tel" id="phone" name="phone" value="+380" required><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<footer id="footer-info"></footer>
+
+<script src="script.js"></script>
 </body>
 </html>
